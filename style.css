@@ -20,7 +20,7 @@ header.nav img { width: 28px; height: 28px; }
 header.nav .brand { font-weight: 600; color: var(--fg); }
 header.nav nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
 .hero { text-align: center; padding: 64px 0 40px; }
-.hero img { width: 128px; height: 128px; }
+.hero img { width: 120px; height: 120px; filter: drop-shadow(0 10px 22px rgba(20, 50, 160, .35)); }
 .hero h1 { font-size: 44px; line-height: 1.1; margin: 16px 0 8px; letter-spacing: -0.02em; }
 .hero p { font-size: 20px; color: var(--muted); margin: 0 auto; max-width: 560px; }
 .btn { display: inline-block; margin-top: 24px; padding: 10px 22px; border-radius: 999px; background: var(--accent); color: var(--accent-fg); font-weight: 600; }

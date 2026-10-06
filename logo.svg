@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 824 824" width="512" height="512" role="img" aria-label="FreeShot">
+  <title>FreeShot</title>
+  <!-- Vector master of the FreeShot mark. Same geometry as scripts/make-icon.swift (the app icon),
+       cropped to the icon body and without the outer drop shadow. -->
+  <defs>
+    <linearGradient id="fs-body" gradientUnits="userSpaceOnUse" x1="512" y1="100" x2="512" y2="924">
+      <stop offset="0" stop-color="#5C9DFF"/>
+      <stop offset=".5" stop-color="#2F63EA"/>
+      <stop offset="1" stop-color="#1C3FB8"/>
+    </linearGradient>
+    <radialGradient id="fs-glow" gradientUnits="userSpaceOnUse" cx="380" cy="204" r="520">
+      <stop offset="0" stop-color="#FFF" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#FFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fs-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFE3FF"/>
+      <stop offset="1" stop-color="#E8F5FF"/>
+    </linearGradient>
+    <radialGradient id="fs-pin" gradientUnits="userSpaceOnUse" cx="540" cy="332" r="90" fx="510" fy="297">
+      <stop offset="0" stop-color="#FF8A7A"/>
+      <stop offset=".5" stop-color="#F0453A"/>
+      <stop offset="1" stop-color="#B8231A"/>
+    </radialGradient>
+    <clipPath id="fs-photo">
+      <rect x="-193" y="-138" width="386" height="276" rx="18"/>
+    </clipPath>
+    <filter id="fs-card-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#0A1F66" flood-opacity=".45"/>
+    </filter>
+    <filter id="fs-pin-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#5A0A05" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#fs-body)"/>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#fs-glow)"/>
+
+  <!-- Viewfinder corners -->
+  <path d="M212 332V212H332M692 212H812V332M812 692V812H692M332 812H212V692"
+        fill="none" stroke="#FFF" stroke-opacity=".95" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pinned screenshot -->
+  <g filter="url(#fs-card-shadow)">
+    <g transform="translate(512 546) rotate(6)">
+      <rect x="-215" y="-160" width="430" height="320" rx="34" fill="#FFF"/>
+      <g clip-path="url(#fs-photo)">
+        <rect x="-193" y="-138" width="386" height="276" fill="url(#fs-sky)"/>
+        <circle cx="110" cy="-63" r="35" fill="#FFC83D"/>
+        <path d="M-213 138L-73 -12L67 138Z" fill="#3FBF8A"/>
+        <path d="M-63 138L87 20L223 138Z" fill="#23996B"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Push pin -->
+  <path d="M534 384L518 474" fill="none" stroke="#8A95A8" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="540" cy="332" r="72" fill="url(#fs-pin)" filter="url(#fs-pin-shadow)"/>
+  <ellipse cx="521" cy="305" rx="21" ry="13" fill="#FFF" fill-opacity=".55"/>
+</svg>
