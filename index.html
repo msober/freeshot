@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FreeShot：macOS 截图、标注、贴图</title>
-<meta name="description" content="FreeShot 是原生的 macOS 截图工具：截图、标注，再把它贴在所有窗口之上。安装包只有 1.6 MB，不联网、不统计。">
+<title>FreeShot：macOS 截图、贴图工具</title>
+<meta name="description" content="FreeShot 是原生的 macOS 截图贴图工具：一个快捷键截图，再把它贴在所有窗口之上。安装包只有 1.6 MB，不联网、不统计。">
 <meta name="theme-color" content="#2050d8">
-<meta property="og:title" content="FreeShot：macOS 截图、标注、贴图">
-<meta property="og:description" content="截下来，标清楚，钉上去。原生 macOS 截图工具，不联网、不统计。">
+<meta property="og:title" content="FreeShot：macOS 截图、贴图工具">
+<meta property="og:description" content="截图，贴图，都只要一个快捷键。原生 macOS 工具，不联网、不统计。">
 <meta property="og:image" content="https://msober.github.io/freeshot/img/shot-1.zh.jpg">
 <link rel="alternate" hreflang="en" href="https://msober.github.io/freeshot/en/">
 <link rel="alternate" hreflang="zh-Hans" href="https://msober.github.io/freeshot/">
@@ -48,19 +48,18 @@ try {
     </nav>
     <div class="hero-body">
       <div class="hero-copy">
-        <span class="chip">原生 macOS 应用 · 安装包只有 1.6 MB</span>
+        <span class="chip">原生 macOS 截图贴图工具 · 安装包只有 1.6 MB</span>
         <h1>
-          <span><span class="marker" aria-hidden="true">1</span>截下来，</span>
-          <span><span class="marker" aria-hidden="true">2</span>标清楚，</span>
-          <span><span class="marker" aria-hidden="true">3</span>钉上去。</span>
+          <span class="pillar"><span class="marker" aria-hidden="true">1</span>截图<span class="desc">框选任意区域，悬停自动识别窗口</span></span>
+          <span class="pillar"><span class="marker" aria-hidden="true">2</span>贴图<span class="desc">把截图钉在所有窗口之上，随时对照</span></span>
         </h1>
-        <p class="lead">FreeShot 是原生的 macOS 截图工具。按 <kbd>⌥⌘A</kbd> 框选任意区域，画上箭头、文字和马赛克，然后复制、保存，或者把它贴在所有窗口之上。</p>
+        <p class="lead">按 <kbd>⌃⌥A</kbd> 截图，顺手画上箭头、文字和马赛克。按 <kbd>⌘T</kbd> 把它贴在屏幕上，或者按 <kbd>⌃⌥S</kbd> 直接贴出剪贴板里的图片和文字。</p>
         <div class="cta-block">
           <div class="cta-row">
             <a class="btn" href="https://github.com/msober/freeshot/releases/latest"><svg width="22" height="22" aria-hidden="true"><use href="#i-download"/></svg>下载 Mac 版</a>
             <a class="btn-ghost" href="#shortcuts">看看快捷键</a>
           </div>
-          <span class="meta">v1.0.0 · macOS 14 及以上 · Apple 芯片与 Intel 通用</span>
+          <span class="meta">v1.0.1 · macOS 14 及以上 · Apple 芯片与 Intel 通用</span>
         </div>
       </div>
       <div class="hero-art">
@@ -90,7 +89,7 @@ try {
     </ul>
     <div class="section-head">
       <span class="eyebrow">功能</span>
-      <h2>从按下快捷键到贴上屏幕，一共三步。</h2>
+      <h2>截图和贴图，都只要一个快捷键。</h2>
     </div>
     <div class="steps">
       <article class="step">
@@ -100,25 +99,46 @@ try {
           <div class="frame"><img src="img/shot-2.jpg" alt="悬停时自动选中一个窗口，旁边是像素放大镜和颜色值" width="1600" height="1000" loading="lazy"></div>
         </div>
         <div class="step-copy">
-          <h3><span class="num" aria-hidden="true">1</span>截下来</h3>
-          <p>悬停自动选中窗口，拖拽可以框选任意区域，多台显示器同样可用。</p>
+          <h3><span class="num" aria-hidden="true">1</span>截图</h3>
+          <p>按下快捷键，屏幕定格。悬停自动选中窗口，拖拽可以框选任意区域，多台显示器同样可用。</p>
           <ul class="checks">
             <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>像素放大镜，选区边缘精确到 1 像素</li>
             <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>按 C 复制指针下的颜色值</li>
             <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>回车复制到剪贴板，⌘S 保存成文件</li>
           </ul>
-          <div class="keys"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>A</kbd><span>开始截图</span></div>
+          <div class="keys"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>A</kbd><span>开始截图</span></div>
         </div>
       </article>
       <article class="step flip">
         <div class="shot">
           <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
           <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="img/shot-3.zh.jpg" alt="图表、代码片段和待办事项三张贴图悬浮在其他窗口之上" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">2</span>贴图</h3>
+          <p>截图后按 ⌘T，它就悬浮在所有窗口之上。对着它写代码、填表格，不用来回切窗口。</p>
+          <ul class="checks">
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>滚轮缩放，⌥ 加滚轮调透明度</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>开启鼠标穿透，照常点击贴图下面的窗口</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>右键可以旋转、翻转、复制或保存</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>贴图历史保留最近 50 个，随时再贴一次</li>
+          </ul>
+          <div class="keyrows">
+            <div class="keys"><kbd>⌘</kbd><kbd>T</kbd><span>贴出刚截的图</span></div>
+            <div class="keys"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>S</kbd><span>贴出剪贴板里的图片或文字</span></div>
+          </div>
+        </div>
+      </article>
+      <article class="step">
+        <div class="shot">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
           <div class="frame"><img src="img/shot-4.jpg" alt="用马赛克盖住表格里的邮箱和电话，外面画了一个红框" width="1600" height="1000" loading="lazy"></div>
         </div>
         <div class="step-copy">
-          <h3><span class="num" aria-hidden="true">2</span>标清楚</h3>
-          <p>箭头、文字、序号直接画在截图上。邮箱和电话，一抹就打上马赛克。</p>
+          <h3><span class="num plus" aria-hidden="true">+</span>顺手标注</h3>
+          <p>截图和贴图都能标注：箭头、文字、序号直接画上去，邮箱和电话一抹就打上马赛克。</p>
           <ul class="tools" aria-label="标注工具和对应的按键">
             <li>矩形<kbd>R</kbd></li>
             <li>椭圆<kbd>E</kbd></li>
@@ -130,25 +150,7 @@ try {
             <li>马赛克<kbd>M</kbd></li>
             <li>序号<kbd>N</kbd></li>
           </ul>
-          <p class="note">画错了按 ⌘Z 撤销，⇧⌘Z 重做。</p>
-        </div>
-      </article>
-      <article class="step">
-        <div class="shot">
-          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
-          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
-          <div class="frame"><img src="img/shot-3.zh.jpg" alt="图表、代码片段和待办事项三张贴图悬浮在其他窗口之上" width="1600" height="1000" loading="lazy"></div>
-        </div>
-        <div class="step-copy">
-          <h3><span class="num" aria-hidden="true">3</span>钉上去</h3>
-          <p>截图后按 ⌘T，它就悬浮在所有窗口之上。对着它写代码、填表格，不用来回切窗口。</p>
-          <ul class="checks">
-            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>滚轮缩放，⌥ 加滚轮调透明度</li>
-            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>⌥⌘P 把剪贴板里的图片或文字直接贴出来</li>
-            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>按空格，在贴图上继续标注</li>
-            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>开启鼠标穿透，照常点击贴图下面的窗口</li>
-            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>贴图历史保留最近 50 个，随时再贴一次</li>
-          </ul>
+          <p class="note">画错了按 ⌘Z 撤销，⇧⌘Z 重做。在贴图上按空格继续标注。</p>
         </div>
       </article>
     </div>
@@ -160,17 +162,15 @@ try {
     <div class="section-head">
       <span class="eyebrow">快捷键</span>
       <h2>双手不用离开键盘。</h2>
-      <p>全局快捷键可以在“设置 › 快捷键”里换成你顺手的组合。</p>
+      <p>默认的 ⌃⌥A 和 ⌃⌥S 避开了常用软件的快捷键，也可以在“设置 › 快捷键”里换成你顺手的组合。</p>
     </div>
     <div class="keymaps">
       <div>
-        <h3>截图与标注</h3>
+        <h3>截图</h3>
         <ul>
-          <li>截图<span><kbd>⌥</kbd><kbd>⌘</kbd><kbd>A</kbd></span></li>
-          <li>把剪贴板贴到屏幕<span><kbd>⌥</kbd><kbd>⌘</kbd><kbd>P</kbd></span></li>
+          <li>截图<span><kbd>⌃</kbd><kbd>⌥</kbd><kbd>A</kbd></span></li>
           <li>复制到剪贴板<span><kbd>↩</kbd><i>或</i><kbd>⌘</kbd><kbd>C</kbd></span></li>
           <li>保存成文件<span><kbd>⌘</kbd><kbd>S</kbd></span></li>
-          <li>贴到屏幕<span><kbd>⌘</kbd><kbd>T</kbd></span></li>
           <li>撤销 / 重做<span><kbd>⌘</kbd><kbd>Z</kbd><i>/</i><kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd></span></li>
           <li>复制指针下的颜色值<span><kbd>C</kbd></span></li>
           <li>重新选择 / 取消<span><em>右键</em><i>/</i><kbd>Esc</kbd></span></li>
@@ -179,6 +179,8 @@ try {
       <div>
         <h3>贴图</h3>
         <ul>
+          <li>贴出刚截的图<span><kbd>⌘</kbd><kbd>T</kbd></span></li>
+          <li>贴出剪贴板里的图片或文字<span><kbd>⌃</kbd><kbd>⌥</kbd><kbd>S</kbd></span></li>
           <li>缩放<span><em>滚轮</em><i>或</i><em>双指捏合</em></span></li>
           <li>调透明度<span><kbd>⌥</kbd><em>滚轮</em></span></li>
           <li>移动<span><em>拖拽</em></span></li>
@@ -249,8 +251,8 @@ try {
       <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
       <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
       <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
-      <h2>现在就截一张。</h2>
-      <p>v1.0.0 · 1.6 MB · macOS 14 及以上 · Apple 芯片与 Intel 通用</p>
+      <h2>现在就截一张，贴上去。</h2>
+      <p>v1.0.1 · 1.6 MB · macOS 14 及以上 · Apple 芯片与 Intel 通用</p>
       <a class="btn" href="https://github.com/msober/freeshot/releases/latest"><svg width="22" height="22" aria-hidden="true"><use href="#i-download"/></svg>下载 Mac 版</a>
       <p class="meta">首次打开要在系统设置里放行一次，步骤见上面的常见问题。</p>
     </div>
