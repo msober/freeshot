@@ -25,6 +25,10 @@ header.nav nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
 .hero p { font-size: 20px; color: var(--muted); margin: 0 auto; max-width: 560px; }
 .btn { display: inline-block; margin-top: 24px; padding: 10px 22px; border-radius: 999px; background: var(--accent); color: var(--accent-fg); font-weight: 600; }
 .btn:hover { text-decoration: none; opacity: .9; }
+.btn.secondary { background: var(--card); color: var(--fg); }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+.actions .btn { margin-top: 0; }
+.hero p.note { font-size: 14px; margin-top: 14px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0 56px; }
 .card { background: var(--card); border-radius: 14px; padding: 20px; }
 .card h3 { margin: 0 0 6px; font-size: 17px; }
