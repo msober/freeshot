@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreeShot: screenshot, annotate and pin for Mac</title>
+<meta name="description" content="FreeShot is a native screenshot tool for macOS: capture, annotate, then pin the result above every window. A 1.6 MB download with no network access and no analytics.">
+<meta name="theme-color" content="#2050d8">
+<meta property="og:title" content="FreeShot: screenshot, annotate and pin for Mac">
+<meta property="og:description" content="Capture it. Mark it up. Pin it. A native macOS screenshot tool with no network access and no analytics.">
+<meta property="og:image" content="https://msober.github.io/freeshot/img/shot-1.jpg">
+<link rel="alternate" hreflang="en" href="https://msober.github.io/freeshot/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://msober.github.io/freeshot/">
+<link rel="icon" href="../icon.png" sizes="256x256">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body id="top">
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-corner" viewBox="0 0 92 92"><path d="M10 82V10H82" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-offline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5a11 11 0 0 1 15 0M7.8 14a6.2 6.2 0 0 1 8.4 0M4 4l16 16"/><circle cx="12" cy="18" r="1.2"/></symbol>
+  <symbol id="i-nostats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20v-7M12 20V6M18 20v-4M4 4l16 16"/></symbol>
+  <symbol id="i-nouser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.6"/><path d="M3.5 20c.7-3.7 3.2-5.6 6.5-5.6 1.1 0 2.1.2 3 .6M16.5 15.5l4.5 4.5M21 15.5l-4.5 4.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-2.9 7.9-7 9.5-4.1-1.6-7-5.1-7-9.5V6l7-3zM9 12l2.2 2.2L15 10.5"/></symbol>
+</svg>
+
+<header class="hero dots">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top"><img src="../logo.svg" alt="" width="36" height="36"><span>Free<b>Shot</b></span></a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#shortcuts">Shortcuts</a>
+        <a href="#faq">FAQ</a>
+        <a href="../" lang="zh-Hans" hreflang="zh-Hans" data-lang="zh">中文</a>
+      </div>
+      <a class="nav-cta" href="https://github.com/msober/freeshot/releases/latest"><svg width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>Download</a>
+    </nav>
+    <div class="hero-body">
+      <div class="hero-copy">
+        <span class="chip">Native macOS app · 1.6 MB download</span>
+        <h1>
+          <span><span class="marker" aria-hidden="true">1</span>Capture it.</span>
+          <span><span class="marker" aria-hidden="true">2</span>Mark it up.</span>
+          <span><span class="marker" aria-hidden="true">3</span>Pin it.</span>
+        </h1>
+        <p class="lead">FreeShot is a native screenshot tool for macOS. Press <kbd>⌥⌘A</kbd> to grab any area, add arrows, text and mosaic, then copy it, save it, or keep it floating above every window.</p>
+        <div class="cta-block">
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/msober/freeshot/releases/latest"><svg width="22" height="22" aria-hidden="true"><use href="#i-download"/></svg>Download for Mac</a>
+            <a class="btn-ghost" href="#shortcuts">See the shortcuts</a>
+          </div>
+          <span class="meta">v1.0.0 · macOS 14 or later · Apple silicon and Intel</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="finder">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="pinned">
+            <img src="../img/shot-1.jpg" alt="Annotating a screenshot in FreeShot with a red box, an arrow, text and numbered markers" width="1600" height="1000" fetchpriority="high">
+            <span class="pin" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="features" id="features">
+  <div class="wrap">
+    <ul class="facts">
+      <li><b>1.6<small> MB</small></b><span>download size</span></li>
+      <li><b>9</b><span>annotation tools</span></li>
+      <li><b>50</b><span>pins kept in history</span></li>
+      <li><b>0</b><span>network requests</span></li>
+    </ul>
+    <div class="section-head">
+      <span class="eyebrow">Features</span>
+      <h2>From shortcut to pinned on screen in three steps.</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="shot">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="../img/shot-2.jpg" alt="Hovering snaps the selection to a window, with the pixel magnifier and color value beside the pointer" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">1</span>Capture</h3>
+          <p>Hover to snap to a window, or drag to select any area. It works across multiple displays.</p>
+          <ul class="checks">
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>A pixel magnifier for edges accurate to 1 pixel</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>Press C to copy the color under the pointer</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>Return copies to the clipboard, ⌘S saves a file</li>
+          </ul>
+          <div class="keys"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>A</kbd><span>starts a capture</span></div>
+        </div>
+      </article>
+      <article class="step flip">
+        <div class="shot">
+          <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="../img/shot-4.jpg" alt="Emails and phone numbers in a table hidden with mosaic inside a red box" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">2</span>Annotate</h3>
+          <p>Draw arrows, text and numbered steps right on the screenshot. One swipe of mosaic hides emails and phone numbers.</p>
+          <ul class="tools" aria-label="Annotation tools and their keys">
+            <li>Rectangle<kbd>R</kbd></li>
+            <li>Ellipse<kbd>E</kbd></li>
+            <li>Arrow<kbd>A</kbd></li>
+            <li>Line<kbd>L</kbd></li>
+            <li>Pen<kbd>P</kbd></li>
+            <li>Highlighter<kbd>H</kbd></li>
+            <li>Text<kbd>T</kbd></li>
+            <li>Mosaic<kbd>M</kbd></li>
+            <li>Number<kbd>N</kbd></li>
+          </ul>
+          <p class="note">Made a mistake? ⌘Z undoes it, ⇧⌘Z redoes it.</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="shot">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="../img/shot-3.jpg" alt="A chart, a code snippet and a to-do note pinned above other windows" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">3</span>Pin</h3>
+          <p>Press ⌘T after a capture and it floats above every window. Write code or fill in a form against it without switching windows.</p>
+          <ul class="checks">
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>Scroll to zoom, ⌥ and scroll to change opacity</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>⌥⌘P pins the image or text on your clipboard</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>Press Space to annotate a pin</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>Turn on click-through to use the windows underneath</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>Pin history keeps your last 50 pins to pin again</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="shortcuts" id="shortcuts">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Shortcuts</span>
+      <h2>Keep your hands on the keyboard.</h2>
+      <p>You can change the global shortcuts in Settings › Shortcuts.</p>
+    </div>
+    <div class="keymaps">
+      <div>
+        <h3>Capture and annotate</h3>
+        <ul>
+          <li>Take a screenshot<span><kbd>⌥</kbd><kbd>⌘</kbd><kbd>A</kbd></span></li>
+          <li>Pin the clipboard<span><kbd>⌥</kbd><kbd>⌘</kbd><kbd>P</kbd></span></li>
+          <li>Copy to the clipboard<span><kbd>↩</kbd><i>or</i><kbd>⌘</kbd><kbd>C</kbd></span></li>
+          <li>Save to a file<span><kbd>⌘</kbd><kbd>S</kbd></span></li>
+          <li>Pin to screen<span><kbd>⌘</kbd><kbd>T</kbd></span></li>
+          <li>Undo / Redo<span><kbd>⌘</kbd><kbd>Z</kbd><i>/</i><kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd></span></li>
+          <li>Copy the color under the pointer<span><kbd>C</kbd></span></li>
+          <li>Reselect / Cancel<span><em>Right-click</em><i>/</i><kbd>Esc</kbd></span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pins</h3>
+        <ul>
+          <li>Zoom<span><em>Scroll</em><i>or</i><em>Pinch</em></span></li>
+          <li>Change opacity<span><kbd>⌥</kbd><em>Scroll</em></span></li>
+          <li>Move<span><em>Drag</em></span></li>
+          <li>Annotate the pin<span><kbd>Space</kbd></span></li>
+          <li>Close<span><em>Double-click</em><i>or</i><kbd>Esc</kbd></span></li>
+          <li>Copy, save, rotate, click-through<span><em>Right-click</em></span></li>
+          <li>Pin a recent one again<span><em>Menu bar › Pin History</em></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <div class="privacy-copy">
+      <span class="eyebrow">Privacy</span>
+      <h2>Your screenshots stay on your Mac.</h2>
+      <p>A capture is processed in memory on your Mac and discarded when you finish, unless you copy, save or pin it.</p>
+      <a class="more" href="../privacy.html">Read the full privacy policy<svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <ul class="cards">
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-offline"/></svg></span><h3>No network</h3><p>The app makes no network connections and uploads nothing.</p></li>
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-nostats"/></svg></span><h3>No analytics</h3><p>No analytics, ads or crash reporting, and no third-party services.</p></li>
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-nouser"/></svg></span><h3>No account</h3><p>There is nothing to sign up for or log in to. Install it and go.</p></li>
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-shield"/></svg></span><h3>Sandboxed</h3><p>Screenshots are saved only where you choose. Pin history stays in the app’s own container.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Things you might run into after installing.</h2>
+      <p>If the answer isn’t here, tell us.</p>
+      <a class="btn-line" href="https://github.com/msober/freeshot/issues/new">Open an issue on GitHub<svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <dl class="faq-list">
+      <div>
+        <dt>macOS says FreeShot can’t be opened</dt>
+        <dd>The direct download is not notarized by Apple, so the first launch has to be allowed by hand: open FreeShot once, then go to System Settings › Privacy &amp; Security and click “Open Anyway”. On macOS 14, Control-click the app and choose Open.</dd>
+      </div>
+      <div>
+        <dt>The screenshot is black, or FreeShot asks for permission</dt>
+        <dd>Open System Settings › Privacy &amp; Security › Screen Recording (“Screen &amp; System Audio Recording”), turn on FreeShot, then quit and reopen the app.</dd>
+      </div>
+      <div>
+        <dt>I installed it, but where is the app?</dt>
+        <dd>FreeShot lives in the menu bar; its icon is a viewfinder. Opening it again from Launchpad or Finder shows its Settings.</dd>
+      </div>
+      <div>
+        <dt>A shortcut doesn’t work</dt>
+        <dd>Another app may be using the same shortcut. Pick a different one in Settings › Shortcuts.</dd>
+      </div>
+      <div>
+        <dt>A pin ignores the mouse</dt>
+        <dd>Click-through is on. Click the menu bar icon and choose “Turn Off Click-Through for All Pins”.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta dots">
+  <div class="wrap">
+    <div class="cta-box">
+      <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+      <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+      <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+      <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+      <h2>Take one right now.</h2>
+      <p>v1.0.0 · 1.6 MB · macOS 14 or later · Apple silicon and Intel</p>
+      <a class="btn" href="https://github.com/msober/freeshot/releases/latest"><svg width="22" height="22" aria-hidden="true"><use href="#i-download"/></svg>Download for Mac</a>
+      <p class="meta">The first launch has to be allowed once in System Settings. The steps are in the FAQ above.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../logo.svg" alt="" width="28" height="28">FreeShot</a>
+    <span>© 2026 FreeShot</span>
+    <nav aria-label="Footer">
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="https://github.com/msober/freeshot/issues/new">Send feedback</a>
+      <a href="https://github.com/msober/freeshot/releases">Releases</a>
+      <a href="../" lang="zh-Hans" hreflang="zh-Hans" data-lang="zh">中文</a>
+    </nav>
+  </div>
+</footer>
+<script>
+// Remember an explicit language choice so the Chinese page's redirect leaves it alone.
+document.querySelectorAll("a[data-lang]").forEach(function (a) {
+  a.addEventListener("click", function () { try { localStorage.setItem("freeshot-lang", a.dataset.lang); } catch (e) {} });
+});
+</script>
+</body>
+</html>

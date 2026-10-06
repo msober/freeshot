@@ -1,41 +1,280 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FreeShot — Screenshot &amp; Pin for Mac</title>
-<meta name="description" content="FreeShot is a fast screenshot, annotation and pin tool for macOS. 截图、标注、贴图，一步完成。">
+<title>FreeShot：macOS 截图、标注、贴图</title>
+<meta name="description" content="FreeShot 是原生的 macOS 截图工具：截图、标注，再把它贴在所有窗口之上。安装包只有 1.6 MB，不联网、不统计。">
+<meta name="theme-color" content="#2050d8">
+<meta property="og:title" content="FreeShot：macOS 截图、标注、贴图">
+<meta property="og:description" content="截下来，标清楚，钉上去。原生 macOS 截图工具，不联网、不统计。">
+<meta property="og:image" content="https://msober.github.io/freeshot/img/shot-1.zh.jpg">
+<link rel="alternate" hreflang="en" href="https://msober.github.io/freeshot/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://msober.github.io/freeshot/">
 <link rel="icon" href="icon.png" sizes="256x256">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<script>
+// First visit from a browser with no Chinese among its preferred languages goes to the English page.
+try {
+  var langs = navigator.languages || [navigator.language || ""];
+  if (!localStorage.getItem("freeshot-lang") && !langs.some(function (l) { return /^zh\b/i.test(l); })) location.replace("en/" + location.hash);
+} catch (e) {}
+</script>
 </head>
-<body>
-<header class="nav"><div class="wrap"><img src="logo.svg" alt=""><a class="brand" href="./">FreeShot</a><nav><a href="./">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav></div></header>
-<main class="wrap">
-  <section class="hero">
-    <img src="logo.svg" alt="FreeShot logo">
-    <h1>FreeShot</h1>
-    <p>Screenshot, annotate and pin images on top of everything.<br>截图、标注，并把图片贴在所有窗口之上。</p>
-    <div class="actions">
-      <a class="btn" href="https://github.com/msober/freeshot/releases/latest">Download for Mac · 下载</a>
-      <a class="btn secondary" href="support.html">Get help · 使用帮助</a>
+<body id="top">
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-corner" viewBox="0 0 92 92"><path d="M10 82V10H82" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-offline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5a11 11 0 0 1 15 0M7.8 14a6.2 6.2 0 0 1 8.4 0M4 4l16 16"/><circle cx="12" cy="18" r="1.2"/></symbol>
+  <symbol id="i-nostats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20v-7M12 20V6M18 20v-4M4 4l16 16"/></symbol>
+  <symbol id="i-nouser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.6"/><path d="M3.5 20c.7-3.7 3.2-5.6 6.5-5.6 1.1 0 2.1.2 3 .6M16.5 15.5l4.5 4.5M21 15.5l-4.5 4.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-2.9 7.9-7 9.5-4.1-1.6-7-5.1-7-9.5V6l7-3zM9 12l2.2 2.2L15 10.5"/></symbol>
+</svg>
+
+<header class="hero dots">
+  <div class="wrap">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top"><img src="logo.svg" alt="" width="36" height="36"><span>Free<b>Shot</b></span></a>
+      <div class="nav-links">
+        <a href="#features">功能</a>
+        <a href="#shortcuts">快捷键</a>
+        <a href="#faq">常见问题</a>
+        <a href="en/" lang="en" hreflang="en" data-lang="en">English</a>
+      </div>
+      <a class="nav-cta" href="https://github.com/msober/freeshot/releases/latest"><svg width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>下载</a>
+    </nav>
+    <div class="hero-body">
+      <div class="hero-copy">
+        <span class="chip">原生 macOS 应用 · 安装包只有 1.6 MB</span>
+        <h1>
+          <span><span class="marker" aria-hidden="true">1</span>截下来，</span>
+          <span><span class="marker" aria-hidden="true">2</span>标清楚，</span>
+          <span><span class="marker" aria-hidden="true">3</span>钉上去。</span>
+        </h1>
+        <p class="lead">FreeShot 是原生的 macOS 截图工具。按 <kbd>⌥⌘A</kbd> 框选任意区域，画上箭头、文字和马赛克，然后复制、保存，或者把它贴在所有窗口之上。</p>
+        <div class="cta-block">
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/msober/freeshot/releases/latest"><svg width="22" height="22" aria-hidden="true"><use href="#i-download"/></svg>下载 Mac 版</a>
+            <a class="btn-ghost" href="#shortcuts">看看快捷键</a>
+          </div>
+          <span class="meta">v1.0.0 · macOS 14 及以上 · Apple 芯片与 Intel 通用</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="finder">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="pinned">
+            <img src="img/shot-1.zh.jpg" alt="FreeShot 的标注界面：在截图上画了红框、箭头、文字和序号" width="1600" height="1000" fetchpriority="high">
+            <span class="pin" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="note">macOS 14 or later · Apple silicon &amp; Intel</p>
-  </section>
-  <figure class="shot"><img src="img/shot-1.jpg" alt="Annotating a screenshot with FreeShot" width="1600" height="1000"></figure>
-  <section class="grid">
-    <div class="card"><h3>Smart capture · 智能截图</h3><p>Press <kbd>⌥⌘A</kbd>, hover to snap to a window or drag any area. Pixel magnifier and color picker included.<br>自动识别窗口，放大镜精确到像素，一键取色。</p></div>
-    <div class="card"><h3>Annotate · 标注</h3><p>Rectangles, ellipses, arrows, lines, pen, highlighter, text, mosaic/blur and numbered markers, with undo.<br>矩形、箭头、画笔、文字、马赛克、序号……</p></div>
-    <div class="card"><h3>Pin to screen · 贴图</h3><p>Keep any capture floating above all windows. Zoom, change opacity, rotate, or click through it.<br>贴图置顶，可缩放、调透明度、旋转、鼠标穿透。</p></div>
-    <div class="card"><h3>Pin the clipboard · 剪贴板贴图</h3><p>Press <kbd>⌥⌘P</kbd> to pin the image or text you just copied.<br>把刚复制的图片或文字直接贴到屏幕上。</p></div>
-    <div class="card"><h3>Private by design · 隐私优先</h3><p>No account, no network, no analytics. Everything stays on your Mac.<br>无需账号、不联网、不统计，数据只在你的 Mac 上。</p></div>
-    <div class="card"><h3>Native & light · 原生轻量</h3><p>Built with Swift and ScreenCaptureKit. Lives quietly in the menu bar.<br>原生开发，常驻菜单栏，小巧流畅。</p></div>
-  </section>
-  <section class="gallery">
-    <figure class="shot"><img src="img/shot-3.jpg" alt="Images and text pinned above other windows" loading="lazy" width="1600" height="1000"><figcaption>Pin anything on top · 贴图置顶</figcaption></figure>
-    <figure class="shot"><img src="img/shot-4.jpg" alt="Hiding emails and phone numbers with mosaic" loading="lazy" width="1600" height="1000"><figcaption>Hide what's private · 马赛克隐藏隐私</figcaption></figure>
-  </section>
+  </div>
+</header>
+
+<main>
+<section class="features" id="features">
+  <div class="wrap">
+    <ul class="facts">
+      <li><b>1.6<small> MB</small></b><span>安装包大小</span></li>
+      <li><b>9<small> 种</small></b><span>标注工具</span></li>
+      <li><b>50<small> 个</small></b><span>贴图历史</span></li>
+      <li><b>0<small> 次</small></b><span>联网请求</span></li>
+    </ul>
+    <div class="section-head">
+      <span class="eyebrow">功能</span>
+      <h2>从按下快捷键到贴上屏幕，一共三步。</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="shot">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="img/shot-2.jpg" alt="悬停时自动选中一个窗口，旁边是像素放大镜和颜色值" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">1</span>截下来</h3>
+          <p>悬停自动选中窗口，拖拽可以框选任意区域，多台显示器同样可用。</p>
+          <ul class="checks">
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>像素放大镜，选区边缘精确到 1 像素</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>按 C 复制指针下的颜色值</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>回车复制到剪贴板，⌘S 保存成文件</li>
+          </ul>
+          <div class="keys"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>A</kbd><span>开始截图</span></div>
+        </div>
+      </article>
+      <article class="step flip">
+        <div class="shot">
+          <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="img/shot-4.jpg" alt="用马赛克盖住表格里的邮箱和电话，外面画了一个红框" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">2</span>标清楚</h3>
+          <p>箭头、文字、序号直接画在截图上。邮箱和电话，一抹就打上马赛克。</p>
+          <ul class="tools" aria-label="标注工具和对应的按键">
+            <li>矩形<kbd>R</kbd></li>
+            <li>椭圆<kbd>E</kbd></li>
+            <li>箭头<kbd>A</kbd></li>
+            <li>直线<kbd>L</kbd></li>
+            <li>画笔<kbd>P</kbd></li>
+            <li>荧光笔<kbd>H</kbd></li>
+            <li>文字<kbd>T</kbd></li>
+            <li>马赛克<kbd>M</kbd></li>
+            <li>序号<kbd>N</kbd></li>
+          </ul>
+          <p class="note">画错了按 ⌘Z 撤销，⇧⌘Z 重做。</p>
+        </div>
+      </article>
+      <article class="step">
+        <div class="shot">
+          <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+          <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+          <div class="frame"><img src="img/shot-3.zh.jpg" alt="图表、代码片段和待办事项三张贴图悬浮在其他窗口之上" width="1600" height="1000" loading="lazy"></div>
+        </div>
+        <div class="step-copy">
+          <h3><span class="num" aria-hidden="true">3</span>钉上去</h3>
+          <p>截图后按 ⌘T，它就悬浮在所有窗口之上。对着它写代码、填表格，不用来回切窗口。</p>
+          <ul class="checks">
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>滚轮缩放，⌥ 加滚轮调透明度</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>⌥⌘P 把剪贴板里的图片或文字直接贴出来</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>按空格，在贴图上继续标注</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>开启鼠标穿透，照常点击贴图下面的窗口</li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg>贴图历史保留最近 50 个，随时再贴一次</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="shortcuts" id="shortcuts">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">快捷键</span>
+      <h2>双手不用离开键盘。</h2>
+      <p>全局快捷键可以在“设置 › 快捷键”里换成你顺手的组合。</p>
+    </div>
+    <div class="keymaps">
+      <div>
+        <h3>截图与标注</h3>
+        <ul>
+          <li>截图<span><kbd>⌥</kbd><kbd>⌘</kbd><kbd>A</kbd></span></li>
+          <li>把剪贴板贴到屏幕<span><kbd>⌥</kbd><kbd>⌘</kbd><kbd>P</kbd></span></li>
+          <li>复制到剪贴板<span><kbd>↩</kbd><i>或</i><kbd>⌘</kbd><kbd>C</kbd></span></li>
+          <li>保存成文件<span><kbd>⌘</kbd><kbd>S</kbd></span></li>
+          <li>贴到屏幕<span><kbd>⌘</kbd><kbd>T</kbd></span></li>
+          <li>撤销 / 重做<span><kbd>⌘</kbd><kbd>Z</kbd><i>/</i><kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd></span></li>
+          <li>复制指针下的颜色值<span><kbd>C</kbd></span></li>
+          <li>重新选择 / 取消<span><em>右键</em><i>/</i><kbd>Esc</kbd></span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>贴图</h3>
+        <ul>
+          <li>缩放<span><em>滚轮</em><i>或</i><em>双指捏合</em></span></li>
+          <li>调透明度<span><kbd>⌥</kbd><em>滚轮</em></span></li>
+          <li>移动<span><em>拖拽</em></span></li>
+          <li>在贴图上标注<span><kbd>空格</kbd></span></li>
+          <li>关闭<span><em>双击</em><i>或</i><kbd>Esc</kbd></span></li>
+          <li>复制、保存、旋转、鼠标穿透<span><em>右键</em></span></li>
+          <li>再贴一次最近的贴图<span><em>菜单栏 › 贴图历史</em></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <div class="privacy-copy">
+      <span class="eyebrow">隐私</span>
+      <h2>你的截图，只留在你的 Mac 上。</h2>
+      <p>截下来的图只在本机内存里处理。除非你复制、保存或贴图，截图结束就会丢弃。</p>
+      <a class="more" href="privacy.html#zh">阅读完整的隐私政策<svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <ul class="cards">
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-offline"/></svg></span><h3>不联网</h3><p>应用不建立任何网络连接，也不会上传任何内容。</p></li>
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-nostats"/></svg></span><h3>不统计</h3><p>没有统计、广告和崩溃上报，也没有第三方服务。</p></li>
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-nouser"/></svg></span><h3>不要账号</h3><p>没有账号系统，不用注册登录，装好就能用。</p></li>
+      <li><span class="icon" aria-hidden="true"><svg width="26" height="26"><use href="#i-shield"/></svg></span><h3>沙盒运行</h3><p>截图只保存到你选择的位置，贴图历史留在应用自己的容器里。</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow">常见问题</span>
+      <h2>装好之后，可能会遇到这些。</h2>
+      <p>这里没有答案的话，直接告诉我们。</p>
+      <a class="btn-line" href="https://github.com/msober/freeshot/issues/new">在 GitHub 提交反馈<svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <dl class="faq-list">
+      <div>
+        <dt>提示“无法打开 FreeShot”怎么办？</dt>
+        <dd>直接下载的版本没有经过 Apple 公证，首次打开要手动放行一次：先打开一次 FreeShot，再到“系统设置 › 隐私与安全性”里点“仍要打开”。macOS 14 可以按住 Control 点按应用，选择“打开”。</dd>
+      </div>
+      <div>
+        <dt>截图是黑的，或者提示需要权限？</dt>
+        <dd>打开“系统设置 › 隐私与安全性 › 屏幕录制（录屏与系统录音）”，开启 FreeShot，然后退出并重新打开应用。</dd>
+      </div>
+      <div>
+        <dt>装好了，但找不到应用？</dt>
+        <dd>FreeShot 常驻在菜单栏，图标是一个取景框。从启动台或访达再打开一次，会显示设置窗口。</dd>
+      </div>
+      <div>
+        <dt>快捷键没反应？</dt>
+        <dd>可能和别的应用冲突了，在“设置 › 快捷键”里换一个。</dd>
+      </div>
+      <div>
+        <dt>贴图点不动？</dt>
+        <dd>这是开启了鼠标穿透。点菜单栏图标，选择“取消所有贴图的鼠标穿透”。</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta dots">
+  <div class="wrap">
+    <div class="cta-box">
+      <svg class="corner tl" aria-hidden="true"><use href="#i-corner"/></svg>
+      <svg class="corner tr" aria-hidden="true"><use href="#i-corner"/></svg>
+      <svg class="corner br" aria-hidden="true"><use href="#i-corner"/></svg>
+      <svg class="corner bl" aria-hidden="true"><use href="#i-corner"/></svg>
+      <h2>现在就截一张。</h2>
+      <p>v1.0.0 · 1.6 MB · macOS 14 及以上 · Apple 芯片与 Intel 通用</p>
+      <a class="btn" href="https://github.com/msober/freeshot/releases/latest"><svg width="22" height="22" aria-hidden="true"><use href="#i-download"/></svg>下载 Mac 版</a>
+      <p class="meta">首次打开要在系统设置里放行一次，步骤见上面的常见问题。</p>
+    </div>
+  </div>
+</section>
 </main>
-<footer><div class="wrap">© 2026 FreeShot · <a href="privacy.html">Privacy Policy 隐私政策</a> · <a href="support.html">Support 技术支持</a></div></footer>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.svg" alt="" width="28" height="28">FreeShot</a>
+    <span>© 2026 FreeShot</span>
+    <nav aria-label="页脚">
+      <a href="privacy.html#zh">隐私政策</a>
+      <a href="https://github.com/msober/freeshot/issues/new">提交反馈</a>
+      <a href="https://github.com/msober/freeshot/releases">版本发布</a>
+      <a href="en/" lang="en" hreflang="en" data-lang="en">English</a>
+    </nav>
+  </div>
+</footer>
+<script>
+// Remember an explicit language choice so the redirect above leaves it alone.
+document.querySelectorAll("a[data-lang]").forEach(function (a) {
+  a.addEventListener("click", function () { try { localStorage.setItem("freeshot-lang", a.dataset.lang); } catch (e) {} });
+});
+</script>
 </body>
 </html>
